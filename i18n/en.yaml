@@ -3,7 +3,7 @@
 nav:
   menu: "Menu"
   home: "Home"
-  posts: "Posts"
+  posts: "Projects & Posts"
   tags: "Tags"
   categories: "Categories"
   about: "About"
@@ -42,7 +42,7 @@ footer:
 
 # Home related
 home:
-  recent_posts: "Recent Posts"
+  recent_posts: "Recent Projects & Posts"
   showing_posts: "Showing latest"
   posts: "posts"
   view_all_posts: "View All Posts"

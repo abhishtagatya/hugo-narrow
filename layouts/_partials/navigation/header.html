@@ -8,7 +8,7 @@
         {{ if ne site.Params.logo.image "" }}
           <a
             href="{{ if site.Params.logo.link }}{{ site.Params.logo.link | relLangURL }}{{ else }}{{ site.Home.RelPermalink }}{{ end }}"
-            class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full transition-transform duration-200 hover:scale-105"
+            class="flex h-10 w-10 items-center justify-center overflow-hidden transition-transform duration-200 hover:scale-105"
             aria-label="{{ site.Title }}">
             <img
               src="{{ site.Params.logo.image }}"

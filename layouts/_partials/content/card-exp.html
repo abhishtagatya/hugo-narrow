@@ -1,0 +1,26 @@
+<article class="group">
+  <div class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 relative flex flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none focus:ring-primary/20">
+    <!-- 内容区域 -->
+    <div class="relative z-10 flex flex-1 flex-col p-6">
+      
+      <!-- 职位标题 + 时间 -->
+      <div class="flex items-center justify-between mb-2">
+        <h3 class="text-foreground group-hover:text-primary text-lg font-semibold leading-tight transition-colors duration-200">
+          {{ .title }}
+        </h3>
+        <span class="text-sm text-muted-foreground">{{ .duration }}</span>
+      </div>
+
+      <!-- 公司 -->
+      <p class="text-muted-foreground text-sm mb-3">{{ .company }}</p>
+
+      <!-- 描述 -->
+      {{ if .description }}
+        <p class="text-foreground text-sm leading-relaxed">
+          {{ .description }}
+        </p>
+      {{ end }}
+
+    </div>
+  </div>
+</article>

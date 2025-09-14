@@ -66,6 +66,15 @@
       </section>
     {{ end }}
 
+    {{ if site.Params.experience }}
+      {{ partial "content/exp-list.html" (dict
+        "experience" site.Params.experience
+        "title" (i18n "home.work_experience" | default "Work Experience")
+        "showTitle" true
+      ) }}
+    {{ end }}
+
+
 
     <!-- 最近文章区域 -->
     {{ $recentPostsCount := site.Params.home.recentPostsCount | default 5 }}

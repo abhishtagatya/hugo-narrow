@@ -1,0 +1,51 @@
+{{/* exp-list.html - 工作经验列表组件 */}}
+
+{{ $experience := .experience }}
+{{ $title := .title | default "Experience" }}
+{{ $showTitle := .showTitle | default true }}
+{{ $linkedinUrl := site.Params.linkedin | default "" }}
+
+{{ if $experience }}
+  <section class="experience-list mb-8">
+    <!-- 列表标题 -->
+    {{ if and $showTitle $title }}
+      <div class="mb-6 flex items-center justify-between">
+        <h2 class="text-foreground text-2xl font-bold">{{ $title }}</h2>
+      </div>
+    {{ end }}
+
+    <!-- 经验卡片列表 -->
+    <div class="space-y-4">
+      {{ range $experience }}
+        {{ partial "content/card-exp.html" . }}
+      {{ end }}
+    </div>
+
+    <!-- 可选 LinkedIn 按钮 -->
+      <div class="mt-8 text-center">
+        <a
+          href="https://www.linkedin.com/in/abhishta-adyatma"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary/20 inline-flex items-center gap-2 rounded-xl px-6 py-3 font-medium shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-105 hover:shadow-lg focus:ring-2 focus:outline-none active:scale-95">
+          {{ partial "features/icon.html" (dict "name" "linkedin" "size" "md" "ariaLabel" "LinkedIn") }}
+          <span>Connect on LinkedIn</span>
+          {{ partial "features/icon.html" (dict "name" "arrow-right" "size" "sm" "ariaLabel" "") }}
+        </a>
+      </div>
+  </section>
+
+{{ else }}
+  <!-- 空状态 -->
+  <div class="py-12 text-center">
+    <div class="bg-muted/50 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+      {{ partial "features/icon.html" (dict "name" "briefcase" "size" "lg" "ariaLabel" "") }}
+    </div>
+    <h3 class="text-foreground mb-2 text-lg font-medium">
+      No Experience Listed
+    </h3>
+    <p class="text-muted-foreground">
+      Please check back later.
+    </p>
+  </div>
+{{ end }}
